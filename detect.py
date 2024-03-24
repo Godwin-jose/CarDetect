@@ -38,7 +38,7 @@ from pathlib import Path
 import torch
 
 FILE = Path(__file__).resolve()
-ROOT = "drive/MyDrive/yolov5" # YOLOv5 root directory
+ROOT = "/content/yolov5" # YOLOv5 root directory
 if str(ROOT) not in sys.path:
     sys.path.append(str(ROOT))  # add ROOT to PATH
 ROOT = Path(os.path.relpath(ROOT, Path.cwd()))  # relative
@@ -68,7 +68,7 @@ global out
 out=[]
 @smart_inference_mode()
 def run(
-    weights="drive/MyDrive/yolov5",   # model path or triton URL
+    weights="/content/CarDetection",   # model path or triton URL
     source=ROOT,   # file/dir/URL/glob/screen/0(webcam)
     data=ROOT /"data/coco128.yaml",  # dataset.yaml path
     imgsz=(640, 640),  # inference size (height, width)
@@ -314,3 +314,4 @@ def main(opt):
 if __name__ == "__main__":
     opt = parse_opt()
     main(opt)
+
